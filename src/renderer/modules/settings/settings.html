@@ -1,0 +1,99 @@
+<div class="settings-container">
+  <h3>Application Settings</h3>
+  <p>Customize your Organizio experience. All settings are stored locally on your device.</p>
+  
+  <div class="settings-section">
+    <h4>Appearance</h4>
+    
+    <div class="settings-group">
+      <label for="theme-select">Theme:</label>
+      <select id="theme-select">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="settings-section">
+    <h4>Privacy &amp; Data</h4>
+    
+    <div class="settings-group">
+      <label class="toggle-switch">
+        <input type="checkbox" id="analytics-toggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <div>
+        <p><strong>Local Analytics</strong></p>
+        <p class="setting-description">Collect basic usage statistics for your own reference. This data never leaves your device.</p>
+      </div>
+    </div>
+    
+    <div class="settings-actions">
+      <button id="view-analytics-btn" class="btn-secondary">View Analytics Data</button>
+      <button id="clear-analytics-btn" class="btn-secondary">Clear Analytics Data</button>
+    </div>
+    
+    <div class="settings-group">
+      <button id="export-data-btn" class="btn-primary">Export All Data</button>
+      <p class="setting-description">Export all your Organizio data as a JSON file.</p>
+    </div>
+  </div>
+  
+  <div class="settings-section">
+    <h4>Premium Features</h4>
+    
+    <div id="premium-status" class="premium-status">
+      <p><strong>Status:</strong> <span id="premium-status-text">Free Version</span></p>
+    </div>
+    
+    <div class="settings-group">
+      <button id="manage-premium-btn" class="btn-premium">Manage Premium Features</button>
+    </div>
+    
+    <div id="premium-features-list" class="premium-features-list">
+      <!-- Premium features will be listed here -->
+      <div class="loading">Loading premium features...</div>
+    </div>
+  </div>
+  
+  <div class="settings-section">
+    <h4>About</h4>
+    
+    <div class="about-info">
+      <p><strong>Organizio</strong></p>
+      <p>Version: <span id="app-version">0.1.0</span></p>
+      <p>A privacy-focused app to help organize your digital life</p>
+      <p>All data is stored locally on your device.</p>
+    </div>
+  </div>
+  
+  <!-- Analytics View Modal -->
+  <div id="analytics-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Your Local Analytics Data</h3>
+      <p>This data is stored only on your device and is never transmitted anywhere.</p>
+      
+      <div id="analytics-container">
+        <!-- Analytics data will be displayed here -->
+        <div class="loading">Loading analytics data...</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Premium Features Modal -->
+  <div id="premium-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Manage Premium Features</h3>
+      <p>Enable or disable premium features. In a real app, these would require purchase.</p>
+      
+      <div id="premium-features-manager">
+        <!-- Premium feature toggles will be displayed here -->
+        <div class="loading">Loading premium features...</div>
+      </div>
+      
+      <button id="save-premium-settings" class="btn-premium">Save Premium Settings</button>
+    </div>
+  </div>
+</div>

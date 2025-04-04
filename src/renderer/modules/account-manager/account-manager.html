@@ -1,0 +1,236 @@
+<div class="module-container">
+  <div class="module-intro">
+    <h3>Account Manager</h3>
+    <p>Track and manage your online accounts in one place. This tool will help you identify forgotten accounts, determine which ones to keep, and organize your digital presence across the web.</p>
+    
+    <button id="account-start-btn" class="btn-primary">Get Started</button>
+  </div>
+  
+  <div class="module-flow" style="display: none;">
+    <!-- Step Indicator -->
+    <div class="step-indicator">
+      <div class="step" data-step="1">1</div>
+      <div class="step" data-step="2">2</div>
+      <div class="step" data-step="3">3</div>
+      <div class="step" data-step="4">4</div>
+    </div>
+    
+    <!-- Step 1: Discovery -->
+    <div class="step-content" data-step="1">
+      <h3>Let's understand your online accounts</h3>
+      <p>Please answer the following questions to help us understand your online account usage.</p>
+      
+      <div class="form-container">
+        <div class="form-group">
+          <label for="account-categories">What types of online accounts do you use? (Select all that apply)</label>
+          <select id="account-categories" name="account-categories" multiple>
+            <option value="social-media">Social Media</option>
+            <option value="shopping">Shopping/Retail</option>
+            <option value="finance">Banking & Finance</option>
+            <option value="streaming">Streaming Services</option>
+            <option value="productivity">Productivity Tools</option>
+            <option value="gaming">Gaming</option>
+            <option value="news">News & Information</option>
+            <option value="other">Other</option>
+          </select>
+          <small>Hold Ctrl/Cmd to select multiple options</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="account-tracking">How do you currently keep track of your online accounts?</label>
+          <select id="account-tracking" name="account-tracking">
+            <option value="memory">I remember them</option>
+            <option value="browser">My browser saves them</option>
+            <option value="password-manager">Using a password manager</option>
+            <option value="document">In a document/spreadsheet</option>
+            <option value="notes">Written notes</option>
+            <option value="no-system">I don't have a system</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="forgotten-accounts">Do you think you have forgotten online accounts you no longer use?</label>
+          <select id="forgotten-accounts" name="forgotten-accounts">
+            <option value="definitely">Yes, definitely</option>
+            <option value="probably">Probably a few</option>
+            <option value="not-sure">Not sure</option>
+            <option value="unlikely">Probably not</option>
+            <option value="no">No, I know all my accounts</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="account-concern">What concerns you most about your online accounts?</label>
+          <select id="account-concern" name="account-concern">
+            <option value="security">Security and data breaches</option>
+            <option value="privacy">Privacy and data collection</option>
+            <option value="too-many">Having too many accounts</option>
+            <option value="forgotten">Forgotten accounts/passwords</option>
+            <option value="managing">Managing recurring payments</option>
+            <option value="nothing">I have no concerns</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-intro">Back</button>
+        <button class="btn-primary" id="to-step-2">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 2: Decision Point -->
+    <div class="step-content" data-step="2">
+      <h3>Add your online accounts</h3>
+      <p>Now, let's add your online accounts to help you organize them. This information is stored only on your device.</p>
+      
+      <div class="accounts-container">
+        <div id="accounts-list">
+          <!-- Accounts will be added here -->
+        </div>
+        
+        <button id="add-account-btn" class="btn-secondary">Add Account</button>
+        
+        <div id="account-form" style="display: none;">
+          <div class="form-group">
+            <label for="account-service">Service/Website</label>
+            <input type="text" id="account-service" placeholder="Facebook, Amazon, Netflix, etc.">
+          </div>
+          
+          <div class="form-group">
+            <label for="account-username">Username/Email</label>
+            <input type="text" id="account-username" placeholder="your.username or email@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="account-url">Website URL (optional)</label>
+            <input type="text" id="account-url" placeholder="https://example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="account-last-login">When did you last use this account?</label>
+            <select id="account-last-login">
+              <option value="today">Today</option>
+              <option value="this-week">This week</option>
+              <option value="this-month">This month</option>
+              <option value="3-months">Within 3 months</option>
+              <option value="6-months">Within 6 months</option>
+              <option value="year">Within a year</option>
+              <option value="more-than-year">More than a year ago</option>
+              <option value="unknown">I don't remember</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="account-importance">How important is this account to you?</label>
+            <select id="account-importance">
+              <option value="5">Critical - Contains important data/financial info</option>
+              <option value="4">Very important - Use it frequently</option>
+              <option value="3">Important - Use it regularly</option>
+              <option value="2">Somewhat important - Use it occasionally</option>
+              <option value="1">Not important - Rarely use it</option>
+              <option value="0">Not needed - Could delete it</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="account-status">Account Status</label>
+            <select id="account-status">
+              <option value="active">Active - Use regularly</option>
+              <option value="inactive">Inactive - Don't use but want to keep</option>
+              <option value="delete">Should delete</option>
+              <option value="unknown">Not sure</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="account-notes">Notes (Do NOT include passwords)</label>
+            <textarea id="account-notes" placeholder="Additional notes about this account"></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button id="cancel-account" class="btn-secondary">Cancel</button>
+            <button id="save-account" class="btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-1">Back</button>
+        <button class="btn-primary" id="to-step-3">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 3: Recommendations -->
+    <div class="step-content" data-step="3">
+      <h3>Account Management Recommendations</h3>
+      <p>Based on your responses, here are personalized recommendations for managing your online accounts.</p>
+      
+      <div id="account-recommendations-container">
+        <!-- Recommendations will be generated here -->
+        <div class="loading">Generating recommendations...</div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-2">Back</button>
+        <button class="btn-primary" id="to-step-4">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 4: Action Plan -->
+    <div class="step-content" data-step="4">
+      <h3>Your Account Management Action Plan</h3>
+      <p>Follow these steps to systematically organize your online accounts.</p>
+      
+      <div id="account-action-plan-container">
+        <!-- Action plan will be generated here -->
+        <div class="loading">Creating your action plan...</div>
+      </div>
+      
+      <!-- Premium feature section -->
+      <div id="account-premium-features" class="premium-features-section">
+        <h4>Premium Features</h4>
+        <p>Upgrade to access these additional account management features:</p>
+        
+        <div class="premium-feature-list">
+          <div class="premium-feature">
+            <h5>Account Cleanup Automation</h5>
+            <p>Step-by-step guides for deleting accounts from various services.</p>
+          </div>
+          
+          <div class="premium-feature">
+            <h5>Account Security Scanner</h5>
+            <p>Check if your accounts have been involved in known data breaches.</p>
+          </div>
+          
+          <div class="premium-feature">
+            <h5>Recurring Payment Tracker</h5>
+            <p>Keep track of subscriptions tied to your accounts.</p>
+          </div>
+        </div>
+        
+        <button id="unlock-account-premium" class="btn-premium">Unlock Premium Features</button>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-3">Back</button>
+        <button class="btn-primary" id="finish-account">Complete</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Results view after completion -->
+  <div class="module-results" style="display: none;">
+    <h3>Account Management Complete!</h3>
+    <p>You've successfully created your account management plan. You can revisit your plan anytime.</p>
+    
+    <div class="results-summary">
+      <h4>Summary</h4>
+      <div id="account-summary">
+        <!-- Summary will be generated here -->
+      </div>
+    </div>
+    
+    <button id="restart-account" class="btn-secondary">Start Over</button>
+    <button id="view-accounts" class="btn-primary">View My Accounts</button>
+  </div>
+</div>

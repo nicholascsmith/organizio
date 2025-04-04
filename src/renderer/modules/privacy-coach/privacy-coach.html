@@ -1,0 +1,224 @@
+<div class="module-container">
+  <div class="module-intro">
+    <h3>Privacy Coach</h3>
+    <p>Get personalized guidance to enhance your digital privacy. This tool will help you assess your current privacy settings, understand key privacy concerns, and implement practical steps to better protect your personal information.</p>
+    
+    <button id="privacy-start-btn" class="btn-primary">Get Started</button>
+  </div>
+  
+  <div class="module-flow" style="display: none;">
+    <!-- Step Indicator -->
+    <div class="step-indicator">
+      <div class="step" data-step="1">1</div>
+      <div class="step" data-step="2">2</div>
+      <div class="step" data-step="3">3</div>
+      <div class="step" data-step="4">4</div>
+    </div>
+    
+    <!-- Step 1: Discovery -->
+    <div class="step-content" data-step="1">
+      <h3>Let's understand your privacy concerns</h3>
+      <p>Please answer the following questions to help us understand your current privacy practices and concerns.</p>
+      
+      <div class="form-container">
+        <div class="form-group">
+          <label for="privacy-concern">What is your biggest privacy concern?</label>
+          <select id="privacy-concern" name="privacy-concern">
+            <option value="data-collection">Data collection by companies</option>
+            <option value="ads-tracking">Targeted advertising and tracking</option>
+            <option value="government">Government surveillance</option>
+            <option value="hackers">Hackers and identity theft</option>
+            <option value="social-media">Social media privacy</option>
+            <option value="location">Location tracking</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="privacy-knowledge">How would you rate your knowledge about digital privacy?</label>
+          <select id="privacy-knowledge" name="privacy-knowledge">
+            <option value="beginner">Beginner - New to privacy concepts</option>
+            <option value="basic">Basic - Familiar with common privacy settings</option>
+            <option value="intermediate">Intermediate - Use some privacy tools</option>
+            <option value="advanced">Advanced - Regularly use privacy tools</option>
+            <option value="expert">Expert - Deep technical understanding</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="privacy-tools">Which privacy tools do you currently use? (Select all that apply)</label>
+          <select id="privacy-tools" name="privacy-tools" multiple>
+            <option value="vpn">VPN</option>
+            <option value="private-browsing">Private browsing mode</option>
+            <option value="ad-blocker">Ad blockers</option>
+            <option value="password-manager">Password manager</option>
+            <option value="secure-messaging">Encrypted messaging</option>
+            <option value="private-search">Private search engines</option>
+            <option value="browser-extensions">Privacy browser extensions</option>
+            <option value="none">None of these</option>
+          </select>
+          <small>Hold Ctrl/Cmd to select multiple options</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="privacy-effort">How much effort are you willing to put into improving your privacy?</label>
+          <select id="privacy-effort" name="privacy-effort">
+            <option value="minimal">Minimal - Simple changes only</option>
+            <option value="moderate">Moderate - Willing to learn new tools</option>
+            <option value="significant">Significant - Ready to change habits</option>
+            <option value="maximum">Maximum - Privacy is a top priority</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-intro">Back</button>
+        <button class="btn-primary" id="to-step-2">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 2: Decision Point -->
+    <div class="step-content" data-step="2">
+      <h3>Assess your privacy settings</h3>
+      <p>Let's review your current privacy settings in different areas to identify improvement opportunities.</p>
+      
+      <div class="privacy-settings-container">
+        <div id="privacy-settings-list">
+          <!-- Privacy settings will be added here -->
+        </div>
+        
+        <button id="add-privacy-setting-btn" class="btn-secondary">Add Privacy Setting</button>
+        
+        <div id="privacy-setting-form" style="display: none;">
+          <div class="form-group">
+            <label for="privacy-category">Category</label>
+            <select id="privacy-category">
+              <option value="browser">Web Browser</option>
+              <option value="social-media">Social Media</option>
+              <option value="mobile">Mobile Device</option>
+              <option value="home">Smart Home</option>
+              <option value="accounts">Online Accounts</option>
+              <option value="communication">Communication Tools</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="privacy-setting-name">Setting Name</label>
+            <input type="text" id="privacy-setting-name" placeholder="e.g., Location Services, Ad Tracking, Third-party Cookies">
+          </div>
+          
+          <div class="form-group">
+            <label for="privacy-current-status">Current Status</label>
+            <select id="privacy-current-status">
+              <option value="enabled">Enabled/On</option>
+              <option value="disabled">Disabled/Off</option>
+              <option value="limited">Limited Access</option>
+              <option value="not-configured">Not Configured</option>
+              <option value="unknown">Unknown</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="privacy-importance">How important is this setting to you?</label>
+            <select id="privacy-importance">
+              <option value="5">Critical - Must address</option>
+              <option value="4">Very important</option>
+              <option value="3">Important</option>
+              <option value="2">Somewhat important</option>
+              <option value="1">Not very important</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="privacy-notes">Notes</label>
+            <textarea id="privacy-notes" placeholder="Any additional notes about this privacy setting"></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button id="cancel-privacy-setting" class="btn-secondary">Cancel</button>
+            <button id="save-privacy-setting" class="btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-1">Back</button>
+        <button class="btn-primary" id="to-step-3">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 3: Recommendations -->
+    <div class="step-content" data-step="3">
+      <h3>Privacy Recommendations</h3>
+      <p>Based on your responses, here are personalized recommendations to enhance your digital privacy.</p>
+      
+      <div id="privacy-recommendations-container">
+        <!-- Recommendations will be generated here -->
+        <div class="loading">Generating recommendations...</div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-2">Back</button>
+        <button class="btn-primary" id="to-step-4">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 4: Action Plan -->
+    <div class="step-content" data-step="4">
+      <h3>Your Privacy Enhancement Action Plan</h3>
+      <p>Follow these steps to systematically improve your privacy and data protection.</p>
+      
+      <div id="privacy-action-plan-container">
+        <!-- Action plan will be generated here -->
+        <div class="loading">Creating your action plan...</div>
+      </div>
+      
+      <!-- Premium feature section -->
+      <div id="privacy-premium-features" class="premium-features-section">
+        <h4>Premium Features</h4>
+        <p>Upgrade to access these additional privacy features:</p>
+        
+        <div class="premium-feature-list">
+          <div class="premium-feature">
+            <h5>Advanced Privacy Assessment</h5>
+            <p>Comprehensive privacy audit with detailed recommendations.</p>
+          </div>
+          
+          <div class="premium-feature">
+            <h5>Step-by-Step Privacy Guides</h5>
+            <p>Detailed tutorials for configuring privacy settings on popular services.</p>
+          </div>
+          
+          <div class="premium-feature">
+            <h5>Data Removal Templates</h5>
+            <p>Templates for requesting data deletion from various services.</p>
+          </div>
+        </div>
+        
+        <button id="unlock-privacy-premium" class="btn-premium">Unlock Premium Features</button>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-3">Back</button>
+        <button class="btn-primary" id="finish-privacy">Complete</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Results view after completion -->
+  <div class="module-results" style="display: none;">
+    <h3>Privacy Enhancement Complete!</h3>
+    <p>You've successfully created your privacy enhancement plan. You can revisit your plan anytime.</p>
+    
+    <div class="results-summary">
+      <h4>Summary</h4>
+      <div id="privacy-summary">
+        <!-- Summary will be generated here -->
+      </div>
+    </div>
+    
+    <button id="restart-privacy" class="btn-secondary">Start Over</button>
+    <button id="view-privacy-settings" class="btn-primary">View My Privacy Settings</button>
+  </div>
+</div>
