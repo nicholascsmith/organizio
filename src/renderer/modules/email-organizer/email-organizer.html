@@ -1,0 +1,214 @@
+<div class="module-container">
+  <div class="module-intro">
+    <h3>Email Organizer</h3>
+    <p>Take control of your inbox and streamline your email accounts. This tool will help you identify which email accounts are important, which ones can be deleted, and how to organize your inbox more effectively.</p>
+    
+    <button id="email-start-btn" class="btn-primary">Get Started</button>
+  </div>
+  
+  <div class="module-flow" style="display: none;">
+    <!-- Step Indicator -->
+    <div class="step-indicator">
+      <div class="step" data-step="1">1</div>
+      <div class="step" data-step="2">2</div>
+      <div class="step" data-step="3">3</div>
+      <div class="step" data-step="4">4</div>
+    </div>
+    
+    <!-- Step 1: Discovery -->
+    <div class="step-content" data-step="1">
+      <h3>Let's discover your email accounts</h3>
+      <p>Please answer the following questions to help us understand your email usage.</p>
+      
+      <div class="form-container">
+        <div class="form-group">
+          <label for="email-count">How many email accounts do you currently use?</label>
+          <select id="email-count" name="email-count">
+            <option value="1-2">1-2</option>
+            <option value="3-5">3-5</option>
+            <option value="6-10">6-10</option>
+            <option value="10+">More than 10</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="email-purpose">What do you primarily use email for?</label>
+          <select id="email-purpose" name="email-purpose" multiple>
+            <option value="personal">Personal communication</option>
+            <option value="work">Work or professional</option>
+            <option value="shopping">Online shopping</option>
+            <option value="newsletters">Newsletters and updates</option>
+            <option value="social">Social media notifications</option>
+            <option value="other">Other</option>
+          </select>
+          <small>Hold Ctrl/Cmd to select multiple options</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="email-frequency">How often do you check your email?</label>
+          <select id="email-frequency" name="email-frequency">
+            <option value="multiple-daily">Multiple times a day</option>
+            <option value="daily">Once a day</option>
+            <option value="few-times">A few times a week</option>
+            <option value="weekly">Once a week</option>
+            <option value="rarely">Rarely</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="email-management">Do you currently have a system for managing your emails?</label>
+          <select id="email-management" name="email-management">
+            <option value="yes">Yes, I have a good system</option>
+            <option value="somewhat">Somewhat, but it could be better</option>
+            <option value="no">No, I don't have a system</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-intro">Back</button>
+        <button class="btn-primary" id="to-step-2">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 2: Decision Point -->
+    <div class="step-content" data-step="2">
+      <h3>Add your email accounts</h3>
+      <p>Now, let's add your email accounts to help you organize them. This information is stored only on your device.</p>
+      
+      <div class="email-accounts-container">
+        <div id="email-accounts-list">
+          <!-- Accounts will be added here -->
+        </div>
+        
+        <button id="add-email-btn" class="btn-secondary">Add Email Account</button>
+        
+        <div id="email-form" style="display: none;">
+          <div class="form-group">
+            <label for="email-service">Email Service</label>
+            <input type="text" id="email-service" placeholder="Gmail, Outlook, Yahoo, etc.">
+          </div>
+          
+          <div class="form-group">
+            <label for="email-address">Email Address</label>
+            <input type="email" id="email-address" placeholder="your.email@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="email-last-login">When did you last use this account?</label>
+            <select id="email-last-login">
+              <option value="today">Today</option>
+              <option value="this-week">This week</option>
+              <option value="this-month">This month</option>
+              <option value="3-months">Within 3 months</option>
+              <option value="6-months">Within 6 months</option>
+              <option value="year">Within a year</option>
+              <option value="more-than-year">More than a year ago</option>
+              <option value="unknown">I don't remember</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="email-importance">How important is this account to you?</label>
+            <select id="email-importance">
+              <option value="5">Critical - I use it daily</option>
+              <option value="4">Very important - I use it weekly</option>
+              <option value="3">Important - I use it monthly</option>
+              <option value="2">Somewhat important - I use it occasionally</option>
+              <option value="1">Not important - I rarely use it</option>
+              <option value="0">Not needed - I could delete it</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="email-notes">Notes</label>
+            <textarea id="email-notes" placeholder="Any additional notes about this email account"></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button id="cancel-email" class="btn-secondary">Cancel</button>
+            <button id="save-email" class="btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-1">Back</button>
+        <button class="btn-primary" id="to-step-3">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 3: Recommendations -->
+    <div class="step-content" data-step="3">
+      <h3>Email Organization Recommendations</h3>
+      <p>Based on your responses, here are personalized recommendations for organizing your email accounts.</p>
+      
+      <div id="recommendations-container">
+        <!-- Recommendations will be generated here -->
+        <div class="loading">Generating recommendations...</div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-2">Back</button>
+        <button class="btn-primary" id="to-step-4">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 4: Action Plan -->
+    <div class="step-content" data-step="4">
+      <h3>Your Email Organization Action Plan</h3>
+      <p>Follow these steps to implement your personalized email organization system.</p>
+      
+      <div id="action-plan-container">
+        <!-- Action plan will be generated here -->
+        <div class="loading">Creating your action plan...</div>
+      </div>
+      
+      <!-- Premium feature section -->
+      <div id="email-premium-features" class="premium-features-section">
+        <h4>Premium Features</h4>
+        <p>Upgrade to access these additional email organization features:</p>
+        
+        <div class="premium-feature-list">
+          <div class="premium-feature">
+            <h5>Email Schedule Templates</h5>
+            <p>Pre-built templates for scheduling email check times.</p>
+          </div>
+          
+          <div class="premium-feature">
+            <h5>Account Cleanup Automation</h5>
+            <p>Step-by-step guides for automating account cleanup.</p>
+          </div>
+          
+          <div class="premium-feature">
+            <h5>Advanced Email Analytics</h5>
+            <p>Deeper insights into your email usage patterns.</p>
+          </div>
+        </div>
+        
+        <button id="unlock-email-premium" class="btn-premium">Unlock Premium Features</button>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-3">Back</button>
+        <button class="btn-primary" id="finish-email">Complete</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Results view after completion -->
+  <div class="module-results" style="display: none;">
+    <h3>Email Organization Complete!</h3>
+    <p>You've successfully created your email organization plan. You can revisit your plan anytime.</p>
+    
+    <div class="results-summary">
+      <h4>Summary</h4>
+      <div id="email-summary">
+        <!-- Summary will be generated here -->
+      </div>
+    </div>
+    
+    <button id="restart-email" class="btn-secondary">Start Over</button>
+    <button id="view-emails" class="btn-primary">View My Email Accounts</button>
+  </div>
+</div>

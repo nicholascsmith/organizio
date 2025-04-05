@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organizio - Organize Your Digital Life</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body class="theme-light">
+  <div id="app">
+    <aside id="sidebar">
+      <div class="logo-container">
+        <h1 class="logo">Organizio</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" data-module="dashboard" class="active">Dashboard</a></li>
+          <li><a href="#" data-module="email-organizer">Email Organizer</a></li>
+          <li><a href="#" data-module="account-manager">Account Manager</a></li>
+          <li><a href="#" data-module="password-hygiene">Password Hygiene</a></li>
+          <li><a href="#" data-module="social-media">Social Media</a></li>
+          <li><a href="#" data-module="privacy-coach">Privacy Coach</a></li>
+          <li><a href="#" data-module="settings">Settings</a></li>
+        </ul>
+      </nav>
+      <div class="theme-toggle">
+        <button id="theme-switch">
+          <span class="light-icon">☀️</span>
+          <span class="dark-icon">🌙</span>
+        </button>
+      </div>
+    </aside>
+    
+    <main id="content">
+      <header>
+        <h2 id="page-title">Dashboard</h2>
+        <div class="user-actions">
+          <button id="premium-btn" class="premium-btn" title="Unlock Premium Features">✨ Premium</button>
+        </div>
+      </header>
+      
+      <div id="module-container">
+        <!-- Module content will be loaded here -->
+        <div id="dashboard" class="module active">
+          <h3>Welcome to Organizio</h3>
+          <p>Your private digital life organizer. All data is stored locally on your device.</p>
+          
+          <div class="dashboard-cards">
+            <div class="card">
+              <h4>Email Organizer</h4>
+              <p>Streamline your email accounts and reduce inbox clutter.</p>
+              <button class="btn-primary" data-navigate="email-organizer">Get Started</button>
+            </div>
+            
+            <div class="card">
+              <h4>Account Manager</h4>
+              <p>Track and manage your online accounts in one place.</p>
+              <button class="btn-primary" data-navigate="account-manager">Get Started</button>
+            </div>
+            
+            <div class="card">
+              <h4>Password Hygiene</h4>
+              <p>Improve your password practices without sharing any actual passwords.</p>
+              <button class="btn-primary" data-navigate="password-hygiene">Get Started</button>
+            </div>
+            
+            <div class="card">
+              <h4>Social Media Declutter</h4>
+              <p>Manage your social media presence and digital footprint.</p>
+              <button class="btn-primary" data-navigate="social-media">Get Started</button>
+            </div>
+            
+            <div class="card">
+              <h4>Privacy Coach</h4>
+              <p>Get personalized guidance to enhance your digital privacy.</p>
+              <button class="btn-primary" data-navigate="privacy-coach">Get Started</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Other modules will be dynamically loaded -->
+      </div>
+    </main>
+  </div>
+  
+  <!-- Modal for premium features -->
+  <div id="premium-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Unlock Premium Features</h3>
+      <p>Upgrade to access advanced features while maintaining your privacy.</p>
+      <p>All premium features are unlocked locally - no account or internet required.</p>
+      
+      <div class="premium-features">
+        <div class="feature">
+          <h4>Advanced Password Analysis</h4>
+          <p>Get detailed password strength recommendations and tracking.</p>
+        </div>
+        
+        <div class="feature">
+          <h4>Social Media Deep Cleaning</h4>
+          <p>Advanced tools to manage your social media presence.</p>
+        </div>
+        
+        <div class="feature">
+          <h4>Privacy Advisor Pro</h4>
+          <p>Personalized, comprehensive privacy recommendations.</p>
+        </div>
+        
+        <div class="feature">
+          <h4>Bulk Actions</h4>
+          <p>Apply changes to multiple items at once.</p>
+        </div>
+        
+        <div class="feature">
+          <h4>Detailed Reports</h4>
+          <p>Generate comprehensive reports about your digital life.</p>
+        </div>
+      </div>
+      
+      <button id="unlock-premium" class="btn-premium">Unlock Premium Features</button>
+      <p class="premium-disclaimer">For development purposes, clicking this button will unlock all premium features. In a real app, this would involve a payment process.</p>
+    </div>
+  </div>
+  
+  <script src="renderer.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "organizio",
+  "version": "0.1.0",
+  "description": "A privacy-focused app to help organize your digital life",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^35.1.3",
+    "electron-builder": "^24.0.0",
+    "electron-rebuild": "^3.2.9"
+  },
+  "dependencies": {
+    "electron-store": "^8.1.0"
+  }
+}

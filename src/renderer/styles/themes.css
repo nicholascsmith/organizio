@@ -1,0 +1,196 @@
+/* Theme Variables */
+
+/* Light Theme */
+.theme-light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f7fa;
+  --color-bg-tertiary: #e4e8f0;
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  --color-accent: #4f6df5;
+  --color-accent-hover: #3a54d6;
+  --color-border: #e0e0e0;
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #f44336;
+  --color-card-bg: #ffffff;
+  --color-sidebar-bg: #f5f7fa;
+  --color-modal-bg: #ffffff;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  
+  /* Premium colors */
+  --color-premium: #9c27b0;
+  --color-premium-hover: #7b1fa2;
+  --color-premium-light: #f3e5f5;
+}
+
+/* Dark Theme */
+.theme-dark {
+  --color-bg-primary: #1e1e2e;
+  --color-bg-secondary: #2a2a3c;
+  --color-bg-tertiary: #363646;
+  --color-text-primary: #e4e4e8;
+  --color-text-secondary: #a1a1b5;
+  --color-text-tertiary: #6c6c7c;
+  --color-accent: #7289da;
+  --color-accent-hover: #5e77d5;
+  --color-border: #363646;
+  --color-success: #81c784;
+  --color-warning: #ffb74d;
+  --color-error: #e57373;
+  --color-card-bg: #2a2a3c;
+  --color-sidebar-bg: #171723;
+  --color-modal-bg: #2a2a3c;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
+  
+  /* Premium colors */
+  --color-premium: #ba68c8;
+  --color-premium-hover: #ab47bc;
+  --color-premium-light: #4a1452;
+}
+
+/* Applying Theme Variables */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+#sidebar {
+  background-color: var(--color-sidebar-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo {
+  color: var(--color-accent);
+}
+
+.nav-links a {
+  color: var(--color-text-secondary);
+}
+
+.nav-links a:hover, .nav-links a.active {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-accent);
+}
+
+#theme-switch {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+#theme-switch:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.theme-light .light-icon, .theme-dark .dark-icon {
+  display: inline;
+}
+
+.theme-light .dark-icon, .theme-dark .light-icon {
+  display: none;
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.premium-btn {
+  background-color: var(--color-premium);
+  color: white;
+}
+
+.premium-btn:hover {
+  background-color: var(--color-premium-hover);
+}
+
+.btn-premium {
+  background-color: var(--color-premium);
+  color: white;
+}
+
+.btn-premium:hover {
+  background-color: var(--color-premium-hover);
+}
+
+.feature {
+  background-color: var(--color-premium-light);
+}
+
+.modal-content {
+  background-color: var(--color-modal-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+.close-modal {
+  color: var(--color-text-secondary);
+}
+
+.close-modal:hover {
+  color: var(--color-text-primary);
+}
+
+.step-indicator::before {
+  background-color: var(--color-border);
+}
+
+.step {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.step.active {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.step.completed {
+  background-color: var(--color-success);
+  color: white;
+}
+
+input, select, textarea {
+  background-color: var(--color-bg-primary);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.toggle-slider {
+  background-color: var(--color-bg-tertiary);
+}
+
+.toggle-slider:before {
+  background-color: white;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--color-accent);
+}
+
+.settings-section h3 {
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}

@@ -1,0 +1,266 @@
+<div class="module-container">
+  <div class="module-intro">
+    <h3>Social Media Declutter</h3>
+    <p>Take control of your social media presence and digital footprint. This tool will help you assess which platforms are valuable to you, which ones you should clean up, and how to better manage your social media usage.</p>
+    
+    <button id="social-start-btn" class="btn-primary">Get Started</button>
+  </div>
+  
+  <div class="module-flow" style="display: none;">
+    <!-- Step Indicator -->
+    <div class="step-indicator">
+      <div class="step" data-step="1">1</div>
+      <div class="step" data-step="2">2</div>
+      <div class="step" data-step="3">3</div>
+      <div class="step" data-step="4">4</div>
+    </div>
+    
+    <!-- Step 1: Discovery -->
+    <div class="step-content" data-step="1">
+      <h3>Let's understand your social media usage</h3>
+      <p>Please answer the following questions to help us understand your social media habits.</p>
+      
+      <div class="form-container">
+        <div class="form-group">
+          <label for="social-platforms">Which social media platforms do you currently use? (Select all that apply)</label>
+          <select id="social-platforms" name="social-platforms" multiple>
+            <option value="facebook">Facebook</option>
+            <option value="instagram">Instagram</option>
+            <option value="twitter">Twitter/X</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="tiktok">TikTok</option>
+            <option value="snapchat">Snapchat</option>
+            <option value="reddit">Reddit</option>
+            <option value="youtube">YouTube</option>
+            <option value="pinterest">Pinterest</option>
+            <option value="other">Other</option>
+          </select>
+          <small>Hold Ctrl/Cmd to select multiple options</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="social-time">How much time do you spend on social media daily?</label>
+          <select id="social-time" name="social-time">
+            <option value="less-30min">Less than 30 minutes</option>
+            <option value="30min-1hr">30 minutes - 1 hour</option>
+            <option value="1-2hrs">1-2 hours</option>
+            <option value="2-3hrs">2-3 hours</option>
+            <option value="3-5hrs">3-5 hours</option>
+            <option value="more-5hrs">More than 5 hours</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="social-purpose">What is your primary purpose for using social media?</label>
+          <select id="social-purpose" name="social-purpose">
+            <option value="staying-connected">Staying connected with friends and family</option>
+            <option value="networking">Professional networking</option>
+            <option value="news">Getting news and information</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="sharing">Sharing personal content</option>
+            <option value="business">Business or professional purposes</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="social-concern">What concerns you most about your social media usage?</label>
+          <select id="social-concern" name="social-concern">
+            <option value="time">Time spent</option>
+            <option value="privacy">Privacy and data collection</option>
+            <option value="mental-health">Mental health impacts</option>
+            <option value="distraction">Distraction from other activities</option>
+            <option value="content">Quality of content</option>
+            <option value="footprint">Digital footprint/past posts</option>
+            <option value="none">I have no concerns</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-intro">Back</button>
+        <button class="btn-primary" id="to-step-2">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 2: Decision Point -->
+    <div class="step-content" data-step="2">
+      <h3>Add your social media accounts</h3>
+      <p>Now, let's add your social media accounts to help you organize them. This information is stored only on your device.</p>
+      
+      <div class="social-accounts-container">
+        <div id="social-accounts-list">
+          <!-- Social accounts will be added here -->
+        </div>
+        
+        <button id="add-social-btn" class="btn-secondary">Add Social Media Account</button>
+        
+        <div id="social-form" style="display: none;">
+          <div class="form-group">
+            <label for="social-platform">Platform</label>
+            <select id="social-platform">
+              <option value="facebook">Facebook</option>
+              <option value="instagram">Instagram</option>
+              <option value="twitter">Twitter/X</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="tiktok">TikTok</option>
+              <option value="snapchat">Snapchat</option>
+              <option value="reddit">Reddit</option>
+              <option value="youtube">YouTube</option>
+              <option value="pinterest">Pinterest</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="social-username">Username/Handle</label>
+            <input type="text" id="social-username" placeholder="Your username or handle">
+          </div>
+          
+          <div class="form-group">
+            <label for="social-profile-url">Profile URL (optional)</label>
+            <input type="text" id="social-profile-url" placeholder="https://example.com/profile">
+          </div>
+          
+          <div class="form-group">
+            <label for="social-last-post">When did you last post or engage on this platform?</label>
+            <select id="social-last-post">
+              <option value="today">Today</option>
+              <option value="this-week">This week</option>
+              <option value="this-month">This month</option>
+              <option value="3-months">Within 3 months</option>
+              <option value="6-months">Within 6 months</option>
+              <option value="year">Within a year</option>
+              <option value="more-than-year">More than a year ago</option>
+              <option value="never">I've never posted</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="social-frequency">How often do you use this platform?</label>
+            <select id="social-frequency">
+              <option value="multiple-daily">Multiple times a day</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">A few times a week</option>
+              <option value="monthly">A few times a month</option>
+              <option value="rarely">Rarely</option>
+              <option value="never">Never</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="social-importance">How important is this account to you?</label>
+            <select id="social-importance">
+              <option value="5">Very important - Essential for work/connections</option>
+              <option value="4">Important - Use it regularly for meaningful connections</option>
+              <option value="3">Moderately important - Use it sometimes</option>
+              <option value="2">Somewhat important - Could do without it</option>
+              <option value="1">Not important - Rarely use it</option>
+              <option value="0">Not needed - Could delete it</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="social-action">What action would you like to take with this account?</label>
+            <select id="social-action">
+              <option value="keep-active">Keep active</option>
+              <option value="clean-up">Clean up old content</option>
+              <option value="limit-use">Limit use</option>
+              <option value="deactivate">Deactivate temporarily</option>
+              <option value="delete">Delete permanently</option>
+              <option value="undecided">Not sure yet</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="social-notes">Notes</label>
+            <textarea id="social-notes" placeholder="Any additional notes about this account"></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button id="cancel-social" class="btn-secondary">Cancel</button>
+            <button id="save-social" class="btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-1">Back</button>
+        <button class="btn-primary" id="to-step-3">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 3: Recommendations -->
+    <div class="step-content" data-step="3">
+      <h3>Social Media Recommendations</h3>
+      <p>Based on your responses, here are personalized recommendations for managing your social media presence.</p>
+      
+      <div id="social-recommendations-container">
+        <!-- Recommendations will be generated here -->
+        <div class="loading">Generating recommendations...</div>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-2">Back</button>
+        <button class="btn-primary" id="to-step-4">Next</button>
+      </div>
+    </div>
+    
+    <!-- Step 4: Action Plan -->
+    <div class="step-content" data-step="4">
+      <h3>Your Social Media Declutter Action Plan</h3>
+      <p>Follow these steps to declutter and better manage your social media presence.</p>
+      
+      <div id="social-action-plan-container">
+        <!-- Action plan will be generated here -->
+        <div class="loading">Creating your action plan...</div>
+      </div>
+      
+      <!-- Premium feature section -->
+      <div id="social-premium-features" class="premium-features-section">
+        <h4>Premium Features</h4>
+        <p>Upgrade to access these additional social media management features:</p>
+        
+        <div class="premium-feature-list">
+          <div class="premium-feature">
+            <h5>Content Cleanup Guides</h5>
+            <p>Platform-specific guides for finding and removing old content.</p>
+          </div>
+          
+          <div class="premium-feature">
+            <h5>Digital Footprint Scanner</h5>
+            <p>Techniques to find forgotten accounts using your email and usernames.</p>
+          </div>
+          
+          <div class="premium-feature">
+            <h5>Usage Tracker Templates</h5>
+            <p>Tools to monitor and manage your social media time consumption.</p>
+          </div>
+        </div>
+        
+        <button id="unlock-social-premium" class="btn-premium">Unlock Premium Features</button>
+      </div>
+      
+      <div class="step-actions">
+        <button class="btn-secondary" id="back-to-step-3">Back</button>
+        <button class="btn-primary" id="finish-social">Complete</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Results view after completion -->
+  <div class="module-results" style="display: none;">
+    <h3>Social Media Declutter Complete!</h3>
+    <p>You've successfully created your social media declutter plan. You can revisit your plan anytime.</p>
+    
+    <div class="results-summary">
+      <h4>Summary</h4>
+      <div id="social-summary">
+        <!-- Summary will be generated here -->
+      </div>
+    </div>
+    
+    <button id="restart-social" class="btn-secondary">Start Over</button>
+    <button id="view-social-accounts" class="btn-primary">View My Accounts</button>
+  </div>
+</div>
